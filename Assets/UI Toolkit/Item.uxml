@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:GroupBox name="Item" style="width: 33%; height: 38px; left: 5%; top: 5%; margin-top: 1px; flex-direction: row;">
+        <ui:Label text="Item" display-tooltip-when-elided="true" name="Name" style="height: 28px; top: auto; left: auto; width: 50%; font-size: 20px; -unity-text-align: middle-left; justify-content: flex-start; flex-grow: initial; align-items: auto; flex-shrink: 0; flex-direction: row;" />
+        <ui:Button text="Craft" display-tooltip-when-elided="true" style="width: auto; white-space: nowrap; -unity-text-align: middle-center; align-items: auto; left: 25%; top: auto; flex-direction: row; flex-grow: 0; position: relative; overflow: hidden; justify-content: flex-start; height: auto; right: auto;" />
+    </ui:GroupBox>
+</ui:UXML>

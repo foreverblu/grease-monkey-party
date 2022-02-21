@@ -1,0 +1,28 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="CraftingTable" style="width: 75%; height: 75%; left: 12.5%; top: 12.5%; right: auto; bottom: auto; background-color: rgb(255, 255, 255); flex-direction: column; -unity-text-outline-color: rgb(210, 210, 210);">
+        <ui:Label text="Crafting Table" display-tooltip-when-elided="true" name="Title" enable-rich-text="true" style="width: 90%; height: 10%; left: 5%; right: auto; top: 5%; bottom: auto; -unity-text-align: upper-left; font-size: 25px; -unity-font-style: bold; -unity-text-outline-color: rgb(210, 210, 210); -unity-font: none; color: rgb(0, 0, 0);" />
+        <ui:GroupBox name="Item" style="width: 33%; height: 38px; left: 5%; top: 5%; margin-top: 1px; flex-direction: row;">
+            <ui:Label text="Item" display-tooltip-when-elided="true" name="Name" style="height: 28px; top: auto; left: auto; width: 50%; font-size: 20px; -unity-text-align: middle-left; justify-content: flex-start; flex-grow: initial; align-items: auto; flex-shrink: 0; flex-direction: row; -unity-font: none; color: rgb(0, 0, 0);" />
+            <ui:Button text="Craft" display-tooltip-when-elided="true" style="width: auto; white-space: nowrap; -unity-text-align: middle-center; align-items: auto; left: 25%; top: auto; flex-direction: row; flex-grow: 0; position: relative; overflow: hidden; justify-content: flex-start; height: auto; right: auto; color: rgb(0, 0, 0);" />
+        </ui:GroupBox>
+        <ui:VisualElement name="Minigame" style="flex-direction: row; position: absolute; left: 45%; top: 10%; width: 50%; height: 80%; background-color: rgb(100, 100, 100);" />
+        <ui:GroupBox name="Item" style="width: 33%; height: 38px; left: 5%; top: 5%; margin-top: 1px; flex-direction: row;">
+            <ui:Label text="Item" display-tooltip-when-elided="true" name="Name" style="height: 28px; top: auto; left: auto; width: 50%; font-size: 20px; -unity-text-align: middle-left; justify-content: flex-start; flex-grow: initial; align-items: auto; flex-shrink: 0; flex-direction: row; -unity-font: none; color: rgb(0, 0, 0);" />
+            <ui:Button text="Craft" display-tooltip-when-elided="true" style="width: auto; white-space: nowrap; -unity-text-align: middle-center; align-items: auto; left: 25%; top: auto; flex-direction: row; flex-grow: 0; position: relative; overflow: hidden; justify-content: flex-start; height: auto; right: auto; color: rgb(0, 0, 0);" />
+        </ui:GroupBox>
+        <ui:GroupBox name="Item" style="width: 33%; height: 38px; left: 5%; top: 5%; margin-top: 1px; flex-direction: row;">
+            <ui:Label text="Item" display-tooltip-when-elided="true" name="Name" style="height: 28px; top: auto; left: auto; width: 50%; font-size: 20px; -unity-text-align: middle-left; justify-content: flex-start; flex-grow: initial; align-items: auto; flex-shrink: 0; flex-direction: row; -unity-font: none; color: rgb(0, 0, 0);" />
+            <ui:Button text="Craft" display-tooltip-when-elided="true" style="width: auto; white-space: nowrap; -unity-text-align: middle-center; align-items: auto; left: 25%; top: auto; flex-direction: row; flex-grow: 0; position: relative; overflow: hidden; justify-content: flex-start; height: auto; right: auto; color: rgb(0, 0, 0);" />
+        </ui:GroupBox>
+        <ui:GroupBox name="Item" style="width: 33%; height: 38px; left: 5%; top: 5%; margin-top: 1px; flex-direction: row;">
+            <ui:Label text="Item" display-tooltip-when-elided="true" name="Name" style="height: 28px; top: auto; left: auto; width: 50%; font-size: 20px; -unity-text-align: middle-left; justify-content: flex-start; flex-grow: initial; align-items: auto; flex-shrink: 0; flex-direction: row; -unity-font: none; color: rgb(0, 0, 0);" />
+            <ui:Button text="Craft" display-tooltip-when-elided="true" style="width: auto; white-space: nowrap; -unity-text-align: middle-center; align-items: auto; left: 25%; top: auto; flex-direction: row; flex-grow: 0; position: relative; overflow: hidden; justify-content: flex-start; height: auto; right: auto; color: rgb(0, 0, 0);" />
+        </ui:GroupBox>
+        <ui:GroupBox name="Item" style="width: 33%; height: 38px; left: 5%; top: 5%; margin-top: 1px; flex-direction: row;">
+            <ui:Label text="Item" display-tooltip-when-elided="true" name="Name" style="height: 28px; top: auto; left: auto; width: 50%; font-size: 20px; -unity-text-align: middle-left; justify-content: flex-start; flex-grow: initial; align-items: auto; flex-shrink: 0; flex-direction: row; -unity-font: none; color: rgb(0, 0, 0);" />
+            <ui:Button text="Craft" display-tooltip-when-elided="true" style="width: auto; white-space: nowrap; -unity-text-align: middle-center; align-items: auto; left: 25%; top: auto; flex-direction: row; flex-grow: 0; position: relative; overflow: hidden; justify-content: flex-start; height: auto; right: auto; color: rgb(0, 0, 0);" />
+        </ui:GroupBox>
+        <ui:ListView focusable="true" name="Inventory" style="width: 33%; left: 5%; top: 10%; height: 33%;" />
+        <ui:ProgressBar focusable="false" style="bottom: 0; top: auto; -unity-text-align: middle-left; align-items: stretch; flex-direction: column; justify-content: flex-start; position: absolute; width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; height: 10px;" />
+    </ui:VisualElement>
+</ui:UXML>
