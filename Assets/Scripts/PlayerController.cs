@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public Camera camera;
     public float rayDistance;
     public float distnace;
-    private Dictionary<string, int> inventory;
+    public Dictionary<string, int> inventory {get; private set;}
     // Start is called before the first frame update
     void Start()
     {
