@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Camera camera;
+    public float rayDistance;
+    public float distnace;
     private Dictionary<string, int> inventory;
     // Start is called before the first frame update
     void Start()
     {
+        inventory = new Dictionary<string, int>();
         // Dummie Data
         inventory.Add("metal", 1);
         inventory.Add("rubber", 2);
@@ -17,6 +21,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown (KeyCode.E)) {
+            Pickup();
+        }
+    }
+
+    void Pickup() {
+        RaycastHit hit;
+        Ray ray = camera.ScreenPointToRay (Input.mousePosition);
+
+        if (Physics.Raycast (ray, out hit, rayDistance)) {
+                if (hit.collider.tag == "Resource") {
+                    Debug.Log ("You hit a pickObject!");
+            }
+        }
     }
 }
