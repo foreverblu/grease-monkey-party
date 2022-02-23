@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast (ray, out hit, rayDistance)) {
                 if (hit.collider.tag == "Resource") {
                     Debug.Log ("You hit a pickObject!");
+                    inventory[hit.gameObject.name] += 1;
             }
         }
     }
