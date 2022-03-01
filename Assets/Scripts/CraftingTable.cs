@@ -7,13 +7,12 @@ using UnityEngine.UIElements;
 public class CraftingTable : MonoBehaviour
 {
     private ListView lv;
-    private PlayerController player;
+    public PlayerController player;
     
     private void OnEnable()
     {
         var rootVE = GetComponent<UIDocument>().rootVisualElement;
         lv = rootVE.Q<ListView>("Inventory");
-        player = GameObject.Find("FirstPersonCharacter").GetComponent<PlayerController>();
         renderListView();
     }
 
@@ -24,7 +23,10 @@ public class CraftingTable : MonoBehaviour
         // for (int i = 1; i <= itemCount; i++)
         //     items.Add(i.ToString());
 
-        var items = new List<string>(player.inventory.Keys);
+        var items = new List<string>();
+        foreach (KeyValuePair<string, int> kvp in player.inventory) {
+            items.Add(kvp.Key + " : " + kvp.Value.ToString());
+        }
 
         Func<VisualElement> makeItem = () => new Label();
         Action<VisualElement, int> bindItem = (e, i) => (e as Label).text = items[i];
