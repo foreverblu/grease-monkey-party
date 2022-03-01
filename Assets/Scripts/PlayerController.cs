@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private GameController gameController;
     private CraftingController craftingController;
     private FirstPersonController fpController;
+    private string[] resources = new string[] {"metal", "plastic", "glass", "circuits", "leather"};
 
     private bool showCraftingUI;
     // Start is called before the first frame update
@@ -24,10 +26,9 @@ public class PlayerController : MonoBehaviour
         showCraftingUI = false;
 
         inventory = new Dictionary<string, int>();
-        // Dummie Data
-        inventory.Add("metal", 1);
-        inventory.Add("rubber", 2);
-        inventory.Add("glass", 3);
+        foreach (string r in resources)
+            inventory.Add(r, 0);
+
         gameController.UpdateInventory(inventory);
     }
 
@@ -48,9 +49,6 @@ public class PlayerController : MonoBehaviour
                 Cursor.visible = false;
                 fpController.enabled = true;
             }
-
-            
-
         }
     }
 
