@@ -1,23 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class PlayerController : MonoBehaviour
 {
     public Camera camera;
     public float rayDistance;
     public Dictionary<string, int> inventory {get; private set;}
+    public GameObject craftingUIObj;
 
     private GameController gameController;
+    private CraftingController craftingController;
+    private FirstPersonController fpController;
+    private string[] resources = new string[] {"metal", "plastic", "glass", "circuits", "leather"};
+
+    private bool showCraftingUI;
     // Start is called before the first frame update
     void Start()
     {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        fpController = GameObject.Find("RaycastFPSController").GetComponent<FirstPersonController>();
+        craftingController = craftingUIObj.GetComponent<CraftingController>();
+        showCraftingUI = false;
+
         inventory = new Dictionary<string, int>();
-        // Dummie Data
-        inventory.Add("metal", 1);
-        inventory.Add("rubber", 2);
-        inventory.Add("glass", 3);
+        foreach (string r in resources)
+            inventory.Add(r, 0);
+
         gameController.UpdateInventory(inventory);
     }
 
@@ -26,6 +37,18 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown (KeyCode.E)) {
             Pickup();
+        } else if(Input.GetKeyDown (KeyCode.C)) {
+            showCraftingUI = !showCraftingUI;
+            craftingController.gameObject.SetActive(showCraftingUI);
+            if(showCraftingUI) {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                fpController.enabled = false;
+            }else {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                fpController.enabled = true;
+            }
         }
     }
 
