@@ -60,7 +60,7 @@ public class CraftingController : MonoBehaviour
 
     void TiresButtonPressed()
     {
-        CraftPart(new Dictionary<string, int>() {{"metal", 1}, {"plastics", 2}}, "tires");
+        CraftPart(new Dictionary<string, int>() {{"metal", 1}, {"plastic", 2}}, "tire");
         gameController.UpdateInventory(playerController.inventory);
     }
     
@@ -72,7 +72,7 @@ public class CraftingController : MonoBehaviour
 
     void WindowsButtonPressed()
     {
-        CraftPart(new Dictionary<string, int>() {{"metal", 1}, {"glass", 1}}, "windows");
+        CraftPart(new Dictionary<string, int>() {{"metal", 1}, {"glass", 1}}, "window");
         gameController.UpdateInventory(playerController.inventory);
     }
 

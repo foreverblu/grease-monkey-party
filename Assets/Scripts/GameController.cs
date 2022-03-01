@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
         Timer timer = timerObj.GetComponent<Timer>();
         inventoryTxt = inventoryObj.GetComponent<TextMeshProUGUI>();
         objectiveTxt = objectivesObj.GetComponent<TextMeshProUGUI>();
-        timer.StartTimer(100.0f);
+        timer.StartTimer(60.0f);
         SetObjectives(-1);
         UpdateObjective("");
     }
