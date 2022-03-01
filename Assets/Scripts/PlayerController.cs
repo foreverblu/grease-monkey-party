@@ -39,8 +39,18 @@ public class PlayerController : MonoBehaviour
         } else if(Input.GetKeyDown (KeyCode.C)) {
             showCraftingUI = !showCraftingUI;
             craftingController.gameObject.SetActive(showCraftingUI);
-            fpController.m_MouseLook.lockCursor = showCraftingUI;
-            fpController.m_MouseLook.UpdateCursorLock();
+            if(showCraftingUI) {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                fpController.enabled = false;
+            }else {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                fpController.enabled = true;
+            }
+
+            
+
         }
     }
 
