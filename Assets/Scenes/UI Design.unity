@@ -487,6 +487,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5973570408500450077, guid: 7c163f00fe4439446be4d42aa77bf402, type: 3}
+      propertyPath: m_MouseLook.smooth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973570408500450077, guid: 7c163f00fe4439446be4d42aa77bf402, type: 3}
+      propertyPath: m_MouseLook.lockCursor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6012306507500787942, guid: 7c163f00fe4439446be4d42aa77bf402, type: 3}
       propertyPath: rayDistance
       value: 10
