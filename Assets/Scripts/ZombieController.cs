@@ -29,7 +29,7 @@ public class ZombieController : MonoBehaviour
         if (c.transform.CompareTag("Car")) {
             Destroy(gameObject);
         }else if(c.gameObject.tag == "Player") {
-            GameObject.Find("GameController").GetComponent<GameController>().GameOver();
+            GameObject.Find("GameController").GetComponent<GameController>().GameOver(false);
         }
     }
 }

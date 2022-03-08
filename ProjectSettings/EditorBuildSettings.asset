@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LowPoly.unity
     guid: 0cde4876e7f194b63a265e177c347bba
+  - enabled: 1
+    path: Assets/Scenes/WinOver.unity
+    guid: eb5d0dcc21863d143b4dc4d7c9acbabc
   m_configObjects: {}

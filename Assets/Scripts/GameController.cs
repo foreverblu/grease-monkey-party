@@ -112,9 +112,13 @@ public class GameController : MonoBehaviour
     itemTxt.text = n;
   }
 
-  public void GameOver()
+  public void GameOver(bool win)
   {
     GameObject.Find("RaycastFPSController").GetComponent<PlayerController>().GameOver();
-    SceneManager.LoadScene(sceneName: "GameOver");
+    if(win) {
+        SceneManager.LoadScene(sceneName: "GameOver");
+    }else {
+        SceneManager.LoadScene(sceneName: "WinOver");
+    }
   }
 }
