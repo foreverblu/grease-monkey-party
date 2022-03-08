@@ -125,4 +125,12 @@ public class CarController : MonoBehaviour
     t.position = pos;
     t.rotation = rot;
   }
+
+  private void OnTriggerEnter(Collider c)
+  {
+    if (c.tag == "Endzone")
+    {
+      Debug.Log("End");
+    }
+  }
 }
