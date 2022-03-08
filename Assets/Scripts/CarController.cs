@@ -130,7 +130,7 @@ public class CarController : MonoBehaviour
   {
     if (c.tag == "Endzone")
     {
-      Debug.Log("End");
+      GameObject.Find("GameController").GetComponent<GameController>().GameOver(true);
     }
   }
 }

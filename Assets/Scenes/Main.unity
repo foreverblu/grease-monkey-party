@@ -640,6 +640,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1586808610423627769, guid: 46045cba8c09ff74f851c1726fe12624, type: 3}
+      propertyPath: level
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586808610423627769, guid: 46045cba8c09ff74f851c1726fe12624, type: 3}
       propertyPath: timerObj
       value: 
       objectReference: {fileID: 1001046072}

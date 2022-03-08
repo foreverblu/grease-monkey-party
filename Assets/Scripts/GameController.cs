@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
   public GameObject objectivesObj;
   public GameObject itemHighlightObj;
   public GameObject tutorialObj;
+  public int level = 0;
 
   private TextMeshProUGUI inventoryTxt;
   private TextMeshProUGUI objectiveTxt;
@@ -23,7 +24,7 @@ public class GameController : MonoBehaviour
     inventoryTxt = inventoryObj.GetComponent<TextMeshProUGUI>();
     objectiveTxt = objectivesObj.GetComponent<TextMeshProUGUI>();
     itemTxt = itemHighlightObj.GetComponent<TextMeshProUGUI>();
-    SetObjectives(0);
+    SetObjectives(level);
     UpdateObjective("");
   }
 
@@ -115,7 +116,7 @@ public class GameController : MonoBehaviour
   public void GameOver(bool win)
   {
     GameObject.Find("RaycastFPSController").GetComponent<PlayerController>().GameOver();
-    if(win) {
+    if(!win) {
         SceneManager.LoadScene(sceneName: "GameOver");
     }else {
         SceneManager.LoadScene(sceneName: "WinOver");
