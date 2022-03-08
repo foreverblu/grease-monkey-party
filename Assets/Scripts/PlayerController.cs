@@ -63,23 +63,6 @@ public class PlayerController : MonoBehaviour
       {
         Pickup();
       }
-      else if (Input.GetKeyDown(KeyCode.C))
-      {
-        showCraftingUI = !showCraftingUI;
-        craftingController.gameObject.SetActive(showCraftingUI);
-        if (showCraftingUI)
-        {
-          Cursor.lockState = CursorLockMode.None;
-          Cursor.visible = true;
-          fpController.enabled = false;
-        }
-        else
-        {
-          Cursor.lockState = CursorLockMode.Locked;
-          Cursor.visible = false;
-          fpController.enabled = true;
-        }
-      }
     }
   }
 
@@ -107,7 +90,24 @@ public class PlayerController : MonoBehaviour
         inventory[hit.collider.gameObject.name.ToLower()] += 1;
         Destroy(hit.collider.gameObject);
         gameController.UpdateInventory(inventory);
-
+      }
+      else if (hit.collider.tag == "Workbench")
+      {
+        Debug.Log("Opened workbench!");
+        showCraftingUI = !showCraftingUI;
+        craftingController.gameObject.SetActive(showCraftingUI);
+        if (showCraftingUI)
+        {
+          Cursor.lockState = CursorLockMode.None;
+          Cursor.visible = true;
+          fpController.enabled = false;
+        }
+        else
+        {
+          Cursor.lockState = CursorLockMode.Locked;
+          Cursor.visible = false;
+          fpController.enabled = true;
+        }
       }
       else if (hit.collider.gameObject.name == "Car")
       {
