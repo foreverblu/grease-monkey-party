@@ -66,6 +66,11 @@ public class PlayerController : MonoBehaviour
     }
   }
 
+  public void GameOver() {
+    Cursor.lockState = CursorLockMode.None;
+    Cursor.visible = true;
+    fpController.enabled = false;
+  }
   void Pickup()
   {
     RaycastHit hit;
