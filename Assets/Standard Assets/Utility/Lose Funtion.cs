@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneMangement;
+using UnityEngine.SceneManagement;
+
 
 public class LoseFuntion : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class LoseFuntion : MonoBehaviour
         if(gameHasEnded == false)
         {
             gameHasEnded = true;
-            Debug.log("GAME OVER");
             Invoke("Restart", restartDelay);
         }
     }
@@ -24,3 +24,4 @@ public class LoseFuntion : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
+
