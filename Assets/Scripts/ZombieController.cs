@@ -23,4 +23,11 @@ public class ZombieController : MonoBehaviour
         Vector3 newDirection = Vector3.RotateTowards(transform.forward, target-transform.position, step, 0.0f);
         transform.rotation = Quaternion.LookRotation(newDirection);
     }
+
+    void OnCollisionEnter(Collision c)
+    {
+        if (c.transform.CompareTag("Car")) {
+            Destroy(gameObject);
+        }
+    }
 }

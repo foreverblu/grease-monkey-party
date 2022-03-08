@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Resource
   - Part
+  - Car
   layers:
   - Default
   - TransparentFX
