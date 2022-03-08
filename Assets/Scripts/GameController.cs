@@ -122,4 +122,15 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(sceneName: "WinOver");
     }
   }
+
+  public bool AllDone() {
+      foreach (string key in objectives.Keys)
+      {
+          if(!objectives[key]) {
+              return false;
+          }
+      }
+
+      return true;
+  }
 }
