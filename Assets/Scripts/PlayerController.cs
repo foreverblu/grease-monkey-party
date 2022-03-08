@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private GameController gameController;
     private CraftingController craftingController;
     private FirstPersonController fpController;
+    private Color startcolor;
     private string[] resources = new string[] {"metal", "plastic", "glass", "circuits", "leather"};
 
     private bool showCraftingUI;
