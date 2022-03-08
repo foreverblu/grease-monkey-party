@@ -7,9 +7,12 @@ public class GameController : MonoBehaviour
     public GameObject timerObj;
     public GameObject inventoryObj;
     public GameObject objectivesObj;
+    public GameObject itemHighlightObj;
 
     private TextMeshProUGUI inventoryTxt;
     private TextMeshProUGUI objectiveTxt;
+    
+    private TextMeshProUGUI itemTxt;
     private Dictionary<string, bool> objectives = new Dictionary<string, bool>();
     // Start is called before the first frame update
     void Awake()
@@ -17,6 +20,7 @@ public class GameController : MonoBehaviour
         Timer timer = timerObj.GetComponent<Timer>();
         inventoryTxt = inventoryObj.GetComponent<TextMeshProUGUI>();
         objectiveTxt = objectivesObj.GetComponent<TextMeshProUGUI>();
+        itemTxt = itemHighlightObj.GetComponent<TextMeshProUGUI>();
         timer.StartTimer(60.0f);
         SetObjectives(-1);
         UpdateObjective("");
@@ -65,5 +69,9 @@ public class GameController : MonoBehaviour
             text += key + ": " + inv[key] + "\n";
         }
         inventoryTxt.text = text;
+    }
+
+    public void UpdateHighlight(string n) {
+        itemTxt.text = n;
     }
 }
