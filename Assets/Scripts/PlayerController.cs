@@ -84,6 +84,7 @@ public class PlayerController : MonoBehaviour
         inventory[hit.collider.gameObject.name.ToLower()] += 1;
         Destroy(hit.collider.gameObject);
         gameController.UpdateInventory(inventory);
+        gameController.UpdateHighlight("");
       }
       else if (hit.collider.tag == "Part")
       {
