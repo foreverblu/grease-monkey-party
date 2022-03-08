@@ -24,8 +24,7 @@ public class Timer : MonoBehaviour
             timeLeft -= Time.deltaTime;
             timerText.text = "Time: " + Math.Ceiling(timeLeft);
             if(timeLeft < 0 && timeLeft > -1) {
-                // Game Over Logic;
-                Debug.Log("Game is over");
+                GameObject.Find("GameController").GetComponent<GameController>().GameOver();
             }
         }
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public GameObject timerObj;
@@ -12,19 +13,16 @@ public class GameController : MonoBehaviour
 
     private TextMeshProUGUI inventoryTxt;
     private TextMeshProUGUI objectiveTxt;
-    private TextMeshProUGUI tutTxt;
     
     private TextMeshProUGUI itemTxt;
+    private bool tutOver = false;
     private Dictionary<string, bool> objectives = new Dictionary<string, bool>();
     // Start is called before the first frame update
     void Awake()
     {
-        Timer timer = timerObj.GetComponent<Timer>();
         inventoryTxt = inventoryObj.GetComponent<TextMeshProUGUI>();
         objectiveTxt = objectivesObj.GetComponent<TextMeshProUGUI>();
         itemTxt = itemHighlightObj.GetComponent<TextMeshProUGUI>();
-        tutTxt = itemHighlightObj.GetComponent<TextMeshProUGUI>();
-        timer.StartTimer(300.0f);
         SetObjectives(0);
         UpdateObjective("");
     }
@@ -32,18 +30,26 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (tutorialObj != null && !tutOver && Input.GetMouseButtonDown(0)) {
+            tutOver = true;
+            tutorialObj.SetActive(false);
+        }
     }
 
     void SetObjectives(int car) {
+        Timer timer = timerObj.GetComponent<Timer>();
         if(car == 0) {
+            timer.StartTimer(60.0f);
             objectives.Add("tire", false);
             objectives.Add("door", false);
             objectives.Add("window", false);
         }else if(car == 1) {
+            timer.StartTimer(60.0f);
             objectives.Add("engine", false);
             objectives.Add("seat", false);
             objectives.Add("tire", false);            
         }else if(car == 2) {
+            timer.StartTimer(300.0f);
             objectives.Add("engine", false);
             objectives.Add("seat", false);
             objectives.Add("tire", false);
@@ -87,5 +93,10 @@ public class GameController : MonoBehaviour
 
     public void UpdateHighlight(string n) {
         itemTxt.text = n;
+    }
+
+    public void GameOver() {
+        GameObject.Find("RaycastFPSController").GetComponent<PlayerController>().GameOver();
+        SceneManager.LoadScene (sceneName:"GameOver");
     }
 }
